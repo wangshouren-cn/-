@@ -1,0 +1,25 @@
+{
+  "name": "algorithmexercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangshouren-cn/algorithmExercise.git"
+  },
+  "keywords": [
+    "algorithm"
+  ],
+  "author": "wangshouren",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangshouren-cn/algorithmExercise/issues"
+  },
+  "homepage": "https://github.com/wangshouren-cn/algorithmExercise#readme",
+  "dependencies": {
+    "@types/node": "^14.0.5"
+  }
+}

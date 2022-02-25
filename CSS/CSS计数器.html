@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body{
+        counter-reset: mycount1 3 mycount2;
+
+    }
+    p:before{
+        content: counter(mycount1) ".";
+        counter-increment: mycount1 3;
+    }
+    h3:before{
+        content: counter(mycount2,lower-alpha) "。。。";
+        counter-increment: mycount2 1;
+    }
+    </style>
+</head>
+<body>
+    <p>1111</p>
+    <p>2222</p>
+    <p>3333</p>
+
+    <h3>1111</h3>
+    <h3>2222</h3>
+    <h3>3333</h3>
+</body>
+</html>
