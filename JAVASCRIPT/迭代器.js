@@ -1,4 +1,3 @@
-
 // let next = 1, last = 10;
 // let obj = {
 //     [Symbol.iterator]() {
@@ -6,7 +5,7 @@
 //             next:() => next <= last ? { value: next++ } : { done: true },
 //             return(){
 //                 console.log("called return");
-                
+
 //                 return {done:true}
 //             }
 //         }
@@ -19,21 +18,23 @@
 //     break;
 // }
 
+// let next = 1, last = 10;
+// let obj = {
+//     next:() => next <= last ? { value: next++ } : { done: true },
+//     return(){
+//         console.log("called return");
 
+//         return {done:true}
+//     },
+//     [Symbol.iterator](){return this}
+// }
+// let iter = obj;
 
-let next = 1, last = 10;
-let obj = {
-    next:() => next <= last ? { value: next++ } : { done: true },
-    return(){
-        console.log("called return");
-        
-        return {done:true}
-    },
-    [Symbol.iterator](){return this}
-}
-let iter = obj;
+// for(let value of iter) {
+//     console.log(value)
+//     break;
+// }
 
-for(let value of iter) {
-    console.log(value)
-    break;
-}
+// let config;
+// let props = { ...config };
+// console.log(props);
