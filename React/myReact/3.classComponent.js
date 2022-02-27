@@ -8,8 +8,8 @@
  *
  * Copyright (c) 2022 by 用户/公司名, All Rights Reserved.
  */
-import React, { Component } from "./react2/react.js";
-import ReactDom from "./react2/react-dom.js";
+import React, { Component } from "./react/react.js";
+import ReactDom from "./react/react-dom.js";
 class One extends Component {
   render() {
     return React.createElement(Two, {

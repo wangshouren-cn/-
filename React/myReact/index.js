@@ -1,5 +1,6 @@
 import React, { Component } from "./react/react.js";
 import ReactDOM from "./react/react-dom.js";
+
 class HtmlRef extends Component {
   constructor(props) {
     super(props);
@@ -49,10 +50,10 @@ class ComponentRef extends Component {
     return React.createElement(
       "div",
       null,
-      /*#__PURE__*/ React.createElement(Child, {
+      React.createElement(Child, {
         ref: this.childComponent,
       }),
-      /*#__PURE__*/ React.createElement(
+      React.createElement(
         "button",
         {
           onClick: this.handleClick,

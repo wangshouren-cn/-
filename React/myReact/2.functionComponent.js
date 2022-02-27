@@ -9,8 +9,8 @@
  * Copyright (c) 2022 by 用户/公司名, All Rights Reserved.
  */
 
-import React from "./react2/react.js";
-import ReactDom from "./react2/react-dom.js";
+import React from "./react/react.js";
+import ReactDom from "./react/react-dom.js";
 function FunctionComponent(props) {
   return /*#__PURE__*/ React.createElement(
     "h1",

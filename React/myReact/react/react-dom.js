@@ -2,8 +2,8 @@
  * @Author: 王首人
  * @Date: 2022-02-27 16:14:20
  * @LastEditors: 王首人
- * @LastEditTime: 2022-02-27 20:09:48
- * @FilePath: \myReact\react2\react-dom.js
+ * @LastEditTime: 2022-02-27 22:20:09
+ * @FilePath: \myReact\react\react-dom.js
  * @Description:
  *
  * Copyright (c) 2022 by 用户/公司名, All Rights Reserved.
@@ -13,6 +13,7 @@ import {
   HTML_ELEMENT,
   FUNCTION_COMPONENT,
   CLASS_COMPONENT,
+  FORWARD_REF,
 } from "./constants.js";
 import { addEvent } from "./event.js";
 function render(vDom, fatherDom) {
@@ -25,8 +26,7 @@ function render(vDom, fatherDom) {
  * @return {*}
  */
 export function createDom(vDom) {
-  const { type, props, $$type } = vDom;
-
+  const { type, props, $$type, ref } = vDom;
   if ($$type === HTML_TEXT) {
     const dom = document.createTextNode(type);
     vDom.dom = dom;
@@ -37,14 +37,23 @@ export function createDom(vDom) {
     //html元素
     dom = document.createElement(type);
     bindPropsToDom(props, dom);
+    if (ref) {
+      ref.current = dom;
+    }
   } else if ($$type === FUNCTION_COMPONENT) {
     //函数组件
     dom = createDomByFunctionComponent;
   } else if ($$type === CLASS_COMPONENT) {
     //类组件
 
-    dom = createDomByClassComponent(type, props);
+    dom = createDomByClassComponent(type, props, ref);
+  } else if ($$type === FORWARD_REF) {
+    //forwardRef包裹的组件
+    const { render } = type;
+    // const vDom = render(props, ref);
+    dom = createDom(render(props, ref));
   }
+
   vDom.dom = dom;
   return dom;
 }
@@ -62,12 +71,14 @@ function createDomByFunctionComponent(type, props) {
  * @description: 根据类组件生成Dom
  * @param {Class} type
  * @param {Object} props
+ * @param {Object} ref
  * @return {dom}
  */
-function createDomByClassComponent(type, props) {
+function createDomByClassComponent(type, props, ref) {
   const classInstance = new type(props); //创建组件对象
   const renderedVDom = classInstance.render(); //函数执行后生成虚拟Dom
   classInstance.vDom = renderedVDom;
+  if (ref) ref.current = classInstance;
   return createDom(renderedVDom);
 }
 function bindPropsToDom(props, dom) {
