@@ -2,8 +2,8 @@
  * @Author: 王首人
  * @Date: 2022-02-27 13:40:24
  * @LastEditors: 王首人
- * @LastEditTime: 2022-02-27 20:33:44
- * @FilePath: \myReact\3.cc.js
+ * @LastEditTime: 2022-02-28 08:56:55
+ * @FilePath: \myReact\3.classComponent.js
  * @Description:类组件例子
  *
  * Copyright (c) 2022 by 用户/公司名, All Rights Reserved.
@@ -25,6 +25,9 @@ class Two extends Component {
   }
 }
 class Three extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return React.createElement("h1", null, this.props.name);
   }

@@ -2,7 +2,7 @@
  * @Author: 王首人
  * @Date: 2022-02-27 16:14:20
  * @LastEditors: 王首人
- * @LastEditTime: 2022-02-27 22:20:09
+ * @LastEditTime: 2022-02-28 09:42:16
  * @FilePath: \myReact\react\react-dom.js
  * @Description:
  *
@@ -16,9 +16,11 @@ import {
   FORWARD_REF,
 } from "./constants.js";
 import { addEvent } from "./event.js";
+import util from "./util.js";
 function render(vDom, fatherDom) {
   let dom = createDom(vDom);
   fatherDom.appendChild(dom);
+  if (util.isFunction(dom.componentDidMount)) dom.componentDidMount();
 }
 /**
  * @description: 根据虚拟Dom创建真实Dom
@@ -76,10 +78,15 @@ function createDomByFunctionComponent(type, props) {
  */
 function createDomByClassComponent(type, props, ref) {
   const classInstance = new type(props); //创建组件对象
+  if (util.isFunction(classInstance.componentWillMount))
+    classInstance.componentWillMount(); //组件生命周期
   const renderedVDom = classInstance.render(); //函数执行后生成虚拟Dom
   classInstance.vDom = renderedVDom;
-  if (ref) ref.current = classInstance;
-  return createDom(renderedVDom);
+  if (ref) ref.current = classInstance; //绑定ref
+  const dom = createDom(renderedVDom);
+  if (util.isFunction(classInstance.componentDidMount))
+    dom.componentDidMount = classInstance.componentDidMount.bind(classInstance); //组件生命周期
+  return dom;
 }
 function bindPropsToDom(props, dom) {
   for (const [propName, propValue] of Object.entries(props)) {

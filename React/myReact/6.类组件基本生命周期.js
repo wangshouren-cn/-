@@ -43,5 +43,5 @@ class CounterComponent extends Component {
 let element4 = React.createElement(CounterComponent, {
   number: 0,
 });
-console.log(element4);
+// console.log(element4);
 ReactDom.render(element4, document.getElementById("root"));
