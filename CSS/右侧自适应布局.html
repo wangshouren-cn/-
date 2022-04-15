@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body,
+      html,
+      .container {
+        background-color: #ccc;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* 使用flex */
+      /*
+      .container {
+        display: flex;
+      }
+       .left {
+        width: 300px; 
+        height: 300px;
+        background-color: royalblue;
+      }
+      .right {
+        flex-grow: 1;
+        background-color: aqua;
+      } */
+
+      .left {
+        width: 300px;
+        height: 300px;
+        background-color: royalblue;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
+  </body>
+</html>

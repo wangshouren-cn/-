@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #span {
+        background-color: rebeccapurple;
+        transform: rotate(30deg);
+        transition-duration: 2s;
+        transition-property: all;
+      }
+      .none {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <span id="span"> 123 </span>
+    <button id="btn">点击</button>
+    <script>
+      btn.onclick = () => {
+        span.style.display = "none";
+        span.style.className = "none";
+      };
+    </script>
+  </body>
+</html>

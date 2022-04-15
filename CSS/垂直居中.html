@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .container {
+      height: 300px;
+      background: #ccc;
+      margin-top: 20px;
+    }
+    .content {
+      width: 100px;
+      height: 100px;
+      background-color: #000;
+    }
+
+    /* 使用grid + margin auto*/
+    /*    .container {
+      display: grid;
+    }
+    .content {
+      display: inline;
+      display: inline-block;
+      margin: auto;
+    } */
+
+    /* 使用grid + justify-items align-content */
+    /* .container {
+      display: grid;
+      align-content: center;
+      justify-items: center;
+    } */
+
+    /* 使用flex + margin auto */
+    /* .container {
+      display: flex;
+    }
+    .content {
+      margin: auto;
+    } */
+
+    /* 使用flex + justify-content align-items*/
+    /* .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } */
+
+    /* 使用定位 + margin auto */
+    /* .container {
+      position: relative;
+    }
+    .content {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+    } */
+
+    /* 使用定位 + transform */
+    /*  .container {
+      position: relative;
+    }
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    } */
+  </style>
+  <body>
+    <div class="container">
+      <div class="content"></div>
+    </div>
+  </body>
+</html>

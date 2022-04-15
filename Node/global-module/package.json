@@ -1,0 +1,8 @@
+{
+  "name": "global-module",
+  "main":"./gm1.js",
+  "bin": {
+    "gm1": "./gm1.js",
+    "gm2": "./gm2.js"
+  }
+}

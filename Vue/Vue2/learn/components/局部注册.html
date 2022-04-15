@@ -1,0 +1,60 @@
+<!--
+ * @Author: 王首人
+ * @Date: 2022-04-13 09:56:07
+ * @LastEditors: 王首人
+ * @LastEditTime: 2022-04-13 09:56:07
+ * @FilePath: \Vue2\components\index copy.html
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by 用户/公司名, All Rights Reserved. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+</head>
+<div id="app">
+  <component-a></component-a>
+  <component-b></component-b>
+  <component-c></component-c>
+</div>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+
+    var ComponentA = {
+      data: function () {
+        return {
+          count: 0
+        }
+      },
+      template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+    }
+
+    var ComponentB = {
+      data: function () {
+        return {
+          count: 0
+        }
+      },
+      template: '<div>ComponentB</div>'
+    }
+
+    new Vue({
+      el: '#app', components: {
+        'component-a': ComponentA,
+        'component-b': ComponentB
+      }
+    })
+  </script>
+
+</body>
+
+</html>
