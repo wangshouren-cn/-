@@ -1,0 +1,15 @@
+Progress: resolved 0, reused 1, downloaded 0, added 0
+ WARN  deprecated querystring@0.2.1: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+Progress: resolved 107, reused 83, downloaded 0, added 0
+Progress: resolved 214, reused 187, downloaded 2, added 0
+Progress: resolved 229, reused 206, downloaded 2, added 0
+Packages: +7
++++++++
+Progress: resolved 231, reused 208, downloaded 2, added 5
+Progress: resolved 231, reused 208, downloaded 3, added 6
+Progress: resolved 231, reused 208, downloaded 3, added 7, done
+
+devDependencies:
++ eslint-config-google 0.14.0
++ eslint-plugin-vue 8.6.0
+
